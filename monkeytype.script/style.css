@@ -1,0 +1,441 @@
+
+:root {
+    --bg-primary: #07080c;
+    --bg-secondary: #0d0f15;
+    --bg-card: rgba(17, 20, 29, 0.82);
+    --bg-input: #090b10;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(139, 92, 246, 0.45);
+
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1aa;
+    --text-muted: #686b76;
+
+    --accent: #8b5cf6;
+    --accent-light: #a78bfa;
+    --accent-blue: #6366f1;
+
+    --success: #4ade80;
+    --error: #f87171;
+
+    --radius: 16px;
+
+    --transition: 0.25s ease;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 70px 24px;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(99, 102, 241, 0.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(139, 92, 246, 0.08),
+            transparent 35%
+        ),
+        var(--bg-primary);
+
+    color: var(--text-primary);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    width: min(100%, 950px);
+
+    margin-bottom: 28px;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #d8d0ff 50%,
+            #a78bfa 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    text-align: left;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+#texto {
+    position: relative;
+
+    width: min(100%, 950px);
+    min-height: 170px;
+
+    padding: 28px;
+
+    margin-bottom: 16px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.008)
+        ),
+        var(--bg-card);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px rgba(255, 255, 255, 0.025);
+
+    color: #a8abb5;
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.9;
+    letter-spacing: 0.15px;
+
+    overflow-wrap: anywhere;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/* Pequeno indicador */
+
+#texto::before {
+    content: "TYPING TEST";
+
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+textarea {
+    width: min(100%, 950px);
+    min-height: 150px;
+
+    display: block;
+
+    padding: 20px;
+
+    resize: vertical;
+
+    outline: none;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.015),
+            transparent
+        ),
+        var(--bg-input);
+
+    color: var(--text-primary);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    caret-color: var(--accent-light);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.25);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+
+/* Placeholder */
+
+textarea::placeholder {
+    color: #4f5260;
+}
+
+
+/* Hover */
+
+textarea:hover {
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+
+/* Focus */
+
+textarea:focus {
+    border-color: var(--border-hover);
+
+    background: #0b0d13;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.08),
+        0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+#resultado {
+    width: min(100%, 950px);
+
+    margin-top: 16px;
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139, 92, 246, 0.055),
+            rgba(99, 102, 241, 0.015)
+        ),
+        var(--bg-card);
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.3);
+
+    color: var(--text-secondary);
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+
+/* Resultado hover */
+
+#resultado:hover {
+    border-color: rgba(139, 92, 246, 0.2);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESULT TITLE
+========================= */
+
+#resultado strong {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-primary);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+    background: rgba(139, 92, 246, 0.35);
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #292d38;
+
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3b4050;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 40px 16px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+
+        font-size: 2rem;
+    }
+
+    #texto {
+        min-height: 160px;
+
+        padding: 22px;
+
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+    #texto::before {
+        display: none;
+    }
+
+    textarea {
+        min-height: 135px;
+
+        padding: 18px;
+
+        font-size: 16px;
+    }
+
+    #resultado {
+        padding: 20px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+
+    body {
+        padding: 28px 12px;
+    }
+
+    h1 {
+        font-size: 1.65rem;
+
+        letter-spacing: -0.8px;
+    }
+
+    #texto {
+        padding: 18px;
+
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    textarea {
+        min-height: 120px;
+
+        padding: 16px;
+
+        font-size: 15px;
+    }
+
+    #resultado {
+        padding: 16px;
+
+        border-radius: 12px;
+    }
+}
