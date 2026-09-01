@@ -241,6 +241,6 @@ comportamento específico de uma plataforma externa.
  -debugging de automações.
 
 # 👨‍💻 Autor
-**Jorge Enrique**
-Projeto desenvolvido como experimento de programação, automação e
-aprendizado de Python/Selenium.
+<img src="./assets/FotoReadme.png" width="250" style="border-radius: 10px; display: block; clear: both; margin-bottom: 15px;">
+
+**Jorge Enrique** - Programador Objetivo e Profissional.
